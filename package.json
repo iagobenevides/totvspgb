@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   "homepage": "https://github.com/iagobenevides/totvspgb#readme",
   "description": "",
   "devDependencies": {
-    "cypress": "^14.5.3"
+    "cypress": "^14.5.3",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
   }
 }

@@ -1,5 +1,5 @@
 // ***********************************************
-// This example commands.js shows you how to
+// This example commands.ts shows you how to
 // create various custom commands and overwrite
 // existing commands.
 //
@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      /**
+       * Custom command to login
+       * @example cy.login('email@example.com', 'password')
+       */
+      login(email: string, password: string): Chainable<void>
+      
+      /**
+       * Custom command to drag an element
+       * @example cy.get('.draggable').drag('.target')
+       */
+      drag(target: string): Chainable<void>
+      
+      /**
+       * Custom command to dismiss dialogs
+       * @example cy.dismiss()
+       */
+      dismiss(): Chainable<void>
+    }
+  }
+}
